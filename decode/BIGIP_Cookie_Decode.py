@@ -1,0 +1,2 @@
+import sys, re
+print(".".join(map(lambda x: str(int(x, 16)), re.findall(r'(.{2})', map(lambda x: x[2:], map(hex, map(int, sys.argv[1].split(".")[0:2])))[0])[::-1]))+":"+str(int("".join(re.findall(r'([0-9a-f]{2})', map(lambda x: x[2:], map(hex, map(int, sys.argv[1].split(".")[0:2])))[1].zfill(4))[::-1]), 16)))
